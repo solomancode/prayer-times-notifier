@@ -1,0 +1,17 @@
+{
+  "name": "@prayer-times-notifier/cli",
+  "version": "1.0.0",
+  "description": "prayer times notifier command line interface",
+  "bin": {
+    "@prayer-times-notifier": "./dist/cli.js"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "ttsc -b"
+  },
+  "author": "Mohamed Adel",
+  "license": "MIT",
+  "dependencies": {
+    "prayer-times-notifier": "1.0.0"
+  }
+}

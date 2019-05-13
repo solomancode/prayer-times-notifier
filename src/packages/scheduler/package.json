@@ -1,0 +1,15 @@
+{
+  "name": "@prayer-times-notifier/scheduler",
+  "version": "1.0.0",
+  "description": "cron scheduler",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "ttsc -b"
+  },
+  "keywords": [
+    "cron",
+    "scheduler"
+  ],
+  "author": "Mohamed Adel",
+  "license": "MIT"
+}

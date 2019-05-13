@@ -1,0 +1,59 @@
+<h1>Prayer Times Notifier</h1>
+<form>
+    <small>instance id: #1</small>
+    <fieldset>
+        <legend>general</legend>
+        <label>latitude<input type="text" value="0" name="latitude" id="latitude"></label>
+        <label>longitude<input type="text" value="0" name="longitude" id="longitude"></label>
+        <label>madhab<input type="text" name="madhab" value="Shafi"></label>
+        <label>calcMethod<input type="text" name="calcMethod" value="Egyptian"></label>
+    </fieldset>
+    <fieldset>
+        <legend>prayers</legend>
+
+        <section class="prayer">
+            <label>name<input type="text" value="fajr"></label>
+            <label>prayer call<input type="text" name="prayerCall" value="Salatu Al fajr"></label>
+        </section>
+        
+        <section class="prayer">
+            <label>name<input type="text" value="dhuhr"></label>
+            <label>prayer call<input type="text" name="prayerCall" value="Salatu Al dhuhr"></label>
+        </section>
+
+        <section class="prayer">
+            <label>name<input type="text" value="asr"></label>
+            <label>prayer call<input type="text" name="prayerCall" value="Salatu Al asr"></label>
+        </section>
+        
+        <section class="prayer">
+            <label>name<input type="text" value="maghrib"></label>
+            <label>prayer call<input type="text" name="prayerCall" value="Salatu Al maghrib"></label>
+        </section>
+        
+        <section class="prayer">
+            <label>name<input type="text" value="isha"></label>
+            <label>prayer call<input type="text" name="prayerCall" value="Salatu Al isha"></label>
+        </section>               
+        
+        <section class="prayer">
+            <label>name<input type="text" value="jumuah"></label>
+            <label>prayer call<input type="text" name="prayerCall" value="Salatu Al jumuah"></label>
+        </section>               
+    </fieldset>
+
+    <fieldset>
+        <legend>targets</legend>
+        <details>
+            <summary>Slack</summary>
+            <label>type<input type="text" name="targetName" value="slack"></label>
+            <hr>
+            <label>
+                channel: <input type="text" name="channel" value="#cron">
+                token: <input type="text" name="token" value="">
+                icon_emoji: <input type="text" name="icon_emoji" value=":mosuqe:">
+                username: <input type="text" name="username" value="Prayers Notifier">
+            </label>
+        </details>
+    </fieldset>
+</form>

@@ -1,0 +1,16 @@
+{
+  "name": "@prayer-times-notifier/targets",
+  "version": "1.0.0",
+  "description": "notification targets",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "slack",
+    "facebook",
+    "notification"
+  ],
+  "author": "Mohamed Adel",
+  "license": "MIT"
+}
