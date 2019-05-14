@@ -1,14 +1,13 @@
 import { Task } from './Task';
 export declare class CronTask extends Task {
-    private time;
-    description?: string;
+    task: ITask;
     private cron;
     private callbackQueue;
-    constructor(time: Date, callback: Function, description?: string);
-    private processCronParams;
+    constructor(task: ITask);
+    private processTaskParams;
     private createCronJob;
     private skipNewCronJob;
-    start(description: string): void;
+    start(name: string): void;
     private startCronJob;
     private skipCronJobStart;
     stop(): void;

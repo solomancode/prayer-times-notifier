@@ -8,14 +8,14 @@ export class TaskManager {
     this.taskList = taskList
   }
 
-  public schedule(time: Date, callback: () => void, description: string = '') {
-    const task = new CronTask(time, callback, description)
-    this.taskList.push(task)
+  public schedule(task: ITask) {
+    const cronTask = new CronTask(task)
+    this.taskList.push(cronTask)
     return task;
   }
 
-  private startTask(task: CronTask) {
-    task.start(task.description)
+  private startTask(cronTask: CronTask) {
+    cronTask.start(cronTask.task.name)
   }
 
   public start() {

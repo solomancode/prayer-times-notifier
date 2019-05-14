@@ -51,9 +51,15 @@ class PrayerTimesNotifier {
                 if (name === 'jumuah' && (new Date().getDate() !== 5))
                     continue;
                 if (prayer.prayerTime !== 'NOT_SET') {
-                    this.taskManager.schedule(prayer.prayerTime, () => {
-                        this.notificationManager.notify(name, this.config);
-                    }, name);
+                    const task = {
+                        name,
+                        time: prayer.prayerTime,
+                        utcOffset: this.config.utcOffset,
+                        callback: () => {
+                            this.notificationManager.notify(name, this.config);
+                        }
+                    };
+                    this.taskManager.schedule(task);
                 }
             }
         }

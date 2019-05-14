@@ -106,20 +106,20 @@
         "signature": "63b66918290d794f73832a6d0325be5026236674fe8c0cb0b68d162000d7bbe8"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/src/packages/types.d.ts": {
-        "version": "3e29191419f3520296e20b11c815f1de43b5153f61badd187c01e5a87d95edd6",
-        "signature": "3e29191419f3520296e20b11c815f1de43b5153f61badd187c01e5a87d95edd6"
+        "version": "de4dc56eab293e795ac3cabf2466b7f20b655752db383b578f823dd6b308321e",
+        "signature": "de4dc56eab293e795ac3cabf2466b7f20b655752db383b578f823dd6b308321e"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/src/packages/scheduler/src/Task.ts": {
         "version": "6b4b76c5c13c560c53e71e9e46b0c79d8177248fe2dd062dd02d3bd59162999b",
         "signature": "6b4b76c5c13c560c53e71e9e46b0c79d8177248fe2dd062dd02d3bd59162999b"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/src/packages/scheduler/src/CronTask.ts": {
-        "version": "f198eefd63afeebcd80e140a1bffb5261c6159b8fdaa76b5c82b16f2afc33028",
-        "signature": "f198eefd63afeebcd80e140a1bffb5261c6159b8fdaa76b5c82b16f2afc33028"
+        "version": "292183cb5e1c8d7b26a7d33134b986e1c68d0cd750b3fa10edc445c03f671f5a",
+        "signature": "292183cb5e1c8d7b26a7d33134b986e1c68d0cd750b3fa10edc445c03f671f5a"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/src/packages/scheduler/src/TaskManager.ts": {
-        "version": "74c72672aabc8b65c230b231a9d83cce1cd978a1987db10e12667fc1b0637813",
-        "signature": "74c72672aabc8b65c230b231a9d83cce1cd978a1987db10e12667fc1b0637813"
+        "version": "6d7369bafa414555a59cb765dce8880ed342bd8bfbd177a72c0d6a90e538b072",
+        "signature": "6d7369bafa414555a59cb765dce8880ed342bd8bfbd177a72c0d6a90e538b072"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/src/packages/scheduler/src/index.ts": {
         "version": "a1435191f25fbfea6a3d1fda2c119b0366577d948606f07a374db971e4c98568",
@@ -134,7 +134,7 @@
         "signature": "e0841e680d1bb813787ac9e307d9cecbb4a1cebc74057ab3ff51c956e8e7da53"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/src/packages/core/src/index.ts": {
-        "version": "f4a8eb04a2770625e8d00ab67889c6a2ba50b608f1af8ae84def8c642ac0b6a8",
+        "version": "1db9776c63fba531c134fbc9f181ea33af2caaab013f334012264d5f155bcbcb",
         "signature": "2305c7abf32c372156dd1dee29c7fba2c562403abcea5b136e1a805d96f74a1f"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/node_modules/@types/node/globals.d.ts": {

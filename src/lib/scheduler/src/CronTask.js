@@ -14,63 +14,61 @@ const cron_1 = require("cron");
 const src_1 = require("../../common/src");
 const moment_1 = __importDefault(require("moment"));
 class CronTask extends Task_1.Task {
-    constructor(time, callback, description) {
-        super(description);
-        this.time = time;
-        this.description = description;
-        this.callbackQueue = new src_1.CallbackQueue([callback]);
+    constructor(task) {
+        super(task.description);
+        this.task = task;
+        this.callbackQueue = new src_1.CallbackQueue([task.callback]);
         this.cron = null;
-        this.processCronParams({ cronTime: time, description });
+        this.processTaskParams(task);
     }
-    processCronParams({ cronTime, description }) {
+    processTaskParams(task) {
         const now = moment_1.default();
-        const diff = moment_1.default(cronTime).diff(now, 'seconds');
+        const diff = moment_1.default(task.time).diff(now, 'seconds');
         try {
-            this.createCronJob(cronTime, description);
+            this.createCronJob(task);
         }
         catch (error) {
-            this.skipNewCronJob(cronTime, error);
+            this.skipNewCronJob(task, error);
         }
     }
-    createCronJob(cronTime, description) {
+    createCronJob({ name, time, utcOffset = '0' }) {
         const cronParams = {
-            cronTime,
+            cronTime: time,
+            utcOffset,
             onTick: this.callbackQueue.exec
         };
         this.cron = new cron_1.CronJob(cronParams);
     }
-    skipNewCronJob(cronTime, description) { }
-    start(description) {
-        this.cron
-            ? this.startCronJob(description)
-            : this.skipCronJobStart(description);
+    skipNewCronJob(task, error) { }
+    start(name) {
+        this.startCronJob(name, this.task.time, this.task.utcOffset);
     }
-    startCronJob(description) {
+    startCronJob(name, time, utcOffset) {
         try {
             this.cron.start();
             this.setStatus('started');
         }
         catch (error) {
-            this.skipCronJobStart(error);
+            this.skipCronJobStart(error, name);
         }
     }
-    skipCronJobStart(description) { }
+    skipCronJobStart(error, name) { }
     stop() {
         this.cron && this.cron.stop();
         this.setStatus('stopped');
     }
 }
 __decorate([
-    src_1.logger({ params: [0, 1] })
+    src_1.logger({ params: ['name', 'time', 'utcOffset'] })
 ], CronTask.prototype, "createCronJob", null);
 __decorate([
-    src_1.logger({ params: [1] })
+    src_1.logger({ params: ['name', 'time', 'utcOffset'] })
 ], CronTask.prototype, "skipNewCronJob", null);
 __decorate([
-    src_1.logger({ params: [0] })
+    src_1.logger({ params: [0, 1, 2] })
 ], CronTask.prototype, "startCronJob", null);
 __decorate([
-    src_1.logger({ params: [0] })
+    src_1.logger({ params: [0, 1] })
 ], CronTask.prototype, "skipCronJobStart", null);
 __decorate([
     src_1.logger({ hint: 'Cron Task' })

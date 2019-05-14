@@ -7,53 +7,52 @@ export class CronTask extends Task {
   private cron: CronJob | null;
   private callbackQueue: CallbackQueue;
   
-  constructor(private time: Date, callback: Function, public description?: string) {
-    super(description)
-    this.callbackQueue = new CallbackQueue([callback])
+  constructor(public task: ITask) {
+    super(task.description)
+    this.callbackQueue = new CallbackQueue([task.callback])
     this.cron = null;
-    this.processCronParams({ cronTime: time, description })
+    this.processTaskParams(task)
   }
 
-  private processCronParams({ cronTime, description }: { cronTime: Date; description: string; }) {
+  private processTaskParams(task: ITask) {
     const now = moment()
-    const diff = moment(cronTime).diff(now, 'seconds')
+    const diff = moment(task.time).diff(now, 'seconds')
     try {
-      this.createCronJob(cronTime, description)
+      this.createCronJob(task)
     } catch (error) {
-      this.skipNewCronJob(cronTime, error)
+      this.skipNewCronJob( task, error )
     }
   }
 
-  @logger({params: [0,1]})
-  private createCronJob(cronTime: Date, description: string) {
+  @logger({params: ['name', 'time', 'utcOffset']})
+  private createCronJob({ name, time, utcOffset = '0' }: ITask) {
     const cronParams: CronJobParameters = {
-      cronTime,
+      cronTime: time,
+      utcOffset,
       onTick  : this.callbackQueue.exec
     }
     this.cron = new CronJob(cronParams)
   }
 
-  @logger({params: [1]})
-  private skipNewCronJob(cronTime: Date, description: string) {}
+  @logger({params: ['name', 'time', 'utcOffset']})
+  private skipNewCronJob(task: ITask, error: any) {}
 
-  public start(description: string) {
-    this.cron
-    ? this.startCronJob(description)
-    : this.skipCronJobStart(description)
+  public start(name: string) {
+    this.startCronJob(name, this.task.time, this.task.utcOffset)
   }
   
-  @logger({ params: [0] })
-  private startCronJob(description: string) {
+  @logger({ params: [0, 1, 2] })
+  private startCronJob(name: string, time: Date, utcOffset: string) {
     try {
       this.cron.start()
       this.setStatus('started')
     } catch (error) {
-      this.skipCronJobStart(error)      
+      this.skipCronJobStart(error, name)      
     }
   }
 
-  @logger({ params: [0] })
-  private skipCronJobStart(description: string) {}
+  @logger({params: [0, 1]})
+  private skipCronJobStart(error: any, name: string) {}
   
   @logger({ hint: 'Cron Task' })
   public stop() {

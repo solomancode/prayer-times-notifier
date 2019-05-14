@@ -106,8 +106,8 @@
         "signature": "63b66918290d794f73832a6d0325be5026236674fe8c0cb0b68d162000d7bbe8"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/src/packages/types.d.ts": {
-        "version": "3e29191419f3520296e20b11c815f1de43b5153f61badd187c01e5a87d95edd6",
-        "signature": "3e29191419f3520296e20b11c815f1de43b5153f61badd187c01e5a87d95edd6"
+        "version": "de4dc56eab293e795ac3cabf2466b7f20b655752db383b578f823dd6b308321e",
+        "signature": "de4dc56eab293e795ac3cabf2466b7f20b655752db383b578f823dd6b308321e"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/src/packages/scheduler/src/Task.ts": {
         "version": "c23981ecf4c0945076a0425ea61e60abeb9a7fc5d28ba4b850600da75e8bdc56",
@@ -310,12 +310,12 @@
         "signature": "20075b77a91272f35ff51f682f3496620f8a768dfda52b01f1e6379a30fb7788"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/src/packages/scheduler/src/CronTask.ts": {
-        "version": "a328ce7b2413d766b9655ade45e3f75352b8e9103e4e0e80c6eb96f8ecd8aa8a",
-        "signature": "f198eefd63afeebcd80e140a1bffb5261c6159b8fdaa76b5c82b16f2afc33028"
+        "version": "7b61a47b5102acd4296483efa68066067592621e3ce54a08902594bc51f5ac47",
+        "signature": "292183cb5e1c8d7b26a7d33134b986e1c68d0cd750b3fa10edc445c03f671f5a"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/src/packages/scheduler/src/TaskManager.ts": {
-        "version": "ee7ab49374b1432c5bd4992b261003fe48cbd15a456a616aaac7217e5fad3f96",
-        "signature": "74c72672aabc8b65c230b231a9d83cce1cd978a1987db10e12667fc1b0637813"
+        "version": "8562e008ade3b1e66744bcdaae5b97b47532cf799b3a1360e17a07b90d4a4ffa",
+        "signature": "6d7369bafa414555a59cb765dce8880ed342bd8bfbd177a72c0d6a90e538b072"
       },
       "/media/Data/migration to ubuntu 18/desktop/org/prayer-times-notifier/src/packages/scheduler/src/index.ts": {
         "version": "b4c57c88ead8396de1bcf2f80f018d006d4ec91ada0d25ec42ac02f1f3089519",

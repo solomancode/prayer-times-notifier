@@ -12,13 +12,13 @@ class TaskManager {
     constructor(taskList = []) {
         this.taskList = taskList;
     }
-    schedule(time, callback, description = '') {
-        const task = new CronTask_1.CronTask(time, callback, description);
-        this.taskList.push(task);
+    schedule(task) {
+        const cronTask = new CronTask_1.CronTask(task);
+        this.taskList.push(cronTask);
         return task;
     }
-    startTask(task) {
-        task.start(task.description);
+    startTask(cronTask) {
+        cronTask.start(cronTask.task.name);
     }
     start() {
         this.taskList.forEach(this.startTask);

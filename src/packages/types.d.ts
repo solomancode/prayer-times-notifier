@@ -54,6 +54,14 @@ interface IConfig {
     }
 }
 
+interface ITask {
+  time           : Date
+  callback       : () => void
+  name           ?: string
+  utcOffset      ?: string
+  description    ?: string
+}
+
 type enqueued = 0;
 type dequeued = 1;
 
